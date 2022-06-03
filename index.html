@@ -1,28 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
-  <title>Frontend Mentor | GitHub user search app</title>
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="scss/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="index.js"></script>
+    <title>Frontend Mentor | GitHub user search app</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="header">
+          <a class="logo" href="#">devfinder</a>
+          <div class="theme">
+            <button class="theme-text">Dark</button>
+            <div class="theme-icon"></div>
+          </div>
+        </div>
 
-  devfinder
+        <div class="search-bar">
+          <div class="search-icon"></div>
+          <input
+            class="search-input"
+            type="text"
+            placeholder="Search GitHub username..."
+          />
+          <button class="search-btn">Search</button>
+        </div>
 
-  Light
-  Dark
-
-  Search GitHub username...
-  Search
-
-  Joined
-
-  Repos
-  Followers
-  Following
-
-</body>
+        <div class="card">
+          <div class="user-container">
+            <img
+              class="user-image"
+              src="assets/icon-search.svg"
+              alt="GitHub user image"
+            />
+            <div class="user">
+              <h1>The Octocat</h1>
+              <h2>@octocat</h2>
+              <p>Joined 25 Jan 2011</p>
+            </div>
+          </div>
+          <p class="user-bio">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+            odio. Quisque volutpat mattis eros.
+          </p>
+          <div class="user-stats">
+            <div>
+              <h3>Repos</h3>
+              <h4>8</h4>
+            </div>
+            <div>
+              <h3>Followers</h3>
+              <h4>3938</h4>
+            </div>
+            <div>
+              <h3>Following</h3>
+              <h4>9</h4>
+            </div>
+          </div>
+          <div class="user-info">
+            <div class="user-link">
+              <img
+                class="user-icon"
+                src="assets/icon-location.svg"
+                alt="Location icon"
+              />
+              <p>San Francisco</p>
+            </div>
+            <div class="user-link">
+              <img
+                class="user-icon"
+                src="assets/icon-location.svg"
+                alt="Link icon"
+              />
+              <p>San Francisco</p>
+            </div>
+            <div class="user-link">
+              <img
+                class="user-icon"
+                src="assets/icon-twitter.svg"
+                alt="Twitter icon"
+              />
+              <p>San Francisco</p>
+            </div>
+            <div class="user-link">
+              <img
+                class="user-icon"
+                src="assets/icon-company.svg"
+                alt="Company icon"
+              />
+              <p>San Francisco</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

@@ -1,0 +1,146 @@
+$blue: hsl(212, 100%, 50%);
+$white: hsl(0, 0%, 100%);
+// Light
+$light-gray: hsl(217, 20%, 51%);
+$light-gray-blue: hsl(217, 20%, 51%);
+$light-dark-gray: hsl(217, 21%, 21%);
+$light-bg: hsl(227, 100%, 98%);
+$light-bg-white: hsl(0, 0%, 100%);
+// Dark
+$dark-gray: hsl(220, 40%, 13%);
+$dark-blue: hsl(222, 41%, 20%);
+
+body {
+  font-family: 'Space Mono', monospace;
+  display: grid;
+  place-items: center;
+  transition: background 500ms ease-in-out, color 200ms ease;
+}
+
+h1 {
+  font-size: 1rem;
+}
+h2 {
+  font-size: 1rem;
+  color: $blue;
+  font-weight: 400;
+}
+h3 {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+h4 {
+  font-size: 1rem;
+}
+
+.container {
+  max-width: 35.8125rem;
+  padding: 1.5rem;
+}
+
+.logo {
+  font-weight: 700;
+}
+
+.no-js .theme {
+  display: none;
+}
+
+.theme {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &-text {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+  }
+  &-icon {
+    content: url('/../assets/icon-moon.svg');
+    padding-left: 1rem;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.25rem;
+}
+
+.search {
+  &-bar {
+    display: flex;
+    align-items: center;
+    height: 3.75rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.9375rem;
+  }
+  &-input {
+    width: 100%;
+    background: transparent;
+    padding: 0.3125rem;
+    outline: none;
+    border: none;
+  }
+  &-btn {
+    width: 100%;
+    height: 2.875rem;
+    max-width: 5.25rem;
+    margin: 0.625rem 0.625rem 0.625rem 0;
+    border: none;
+    background: $blue;
+    color: $white;
+    border-radius: 0.625rem;
+    font-size: 0.875rem;
+  }
+  &-icon {
+    content: url('/../assets/icon-search.svg');
+    margin-left: 1rem;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.9375rem;
+  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+  padding: 2rem 1.5rem;
+  gap: 1.5rem;
+}
+
+.user {
+  &-image {
+    height: 4.375rem;
+    width: 4.375rem;
+  }
+  &-container {
+    display: flex;
+    gap: 1.25rem;
+  }
+  &-stats {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 1.125rem 0.875rem;
+    border-radius: 0.625rem;
+  }
+  &-bio {
+  }
+  &-link {
+    display: flex;
+    gap: 1rem;
+  }
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  &-icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    object-fit: contain;
+  }
+}
