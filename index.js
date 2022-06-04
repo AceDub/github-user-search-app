@@ -1,8 +1,7 @@
 'use strict';
 document.documentElement.classList.remove('no-js');
-
 const STORAGE_KEY = 'user-color-scheme';
-const COLOR_MODE_KEY = '$color-mode';
+const COLOR_MODE_KEY = '--color-mode';
 
 const theme = document.querySelector('.theme');
 const themeIcon = document.querySelector('.theme-icon');
@@ -36,9 +35,11 @@ const applySetting = (passedSetting) => {
 
 const setButtonLabelAndStatus = (currentSetting) => {
   themeText.innerText = `${currentSetting === 'dark' ? 'Light' : 'Dark'}`;
-  currentSetting === 'dark'
-    ? (themeIcon.style.content = `url('/../assets/icon-sun.svg')`)
-    : (themeIcon.style.content = `url('/../assets/icon-moon.svg')`);
+  themeIcon.style.content = `${
+    currentSetting === 'dark'
+      ? "url('assets/icon-sun.svg')"
+      : "url('assets/icon-moon.svg')"
+  }`;
 };
 
 const toggleSetting = () => {
@@ -67,4 +68,5 @@ theme.addEventListener('click', (e) => {
 
   applySetting(toggleSetting());
 });
+
 applySetting();
