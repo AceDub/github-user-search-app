@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link
       rel="icon"
       type="image/png"
@@ -17,7 +16,14 @@
       href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <script defer src="index.js"></script>
+    <script defer src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script
+      defer
+      src="https://unpkg.com/dayjs@1.8.21/plugin/customParseFormat.js"
+    ></script>
+    <script defer src="themeToggle.js"></script>
+    <script defer src="userSearch.js"></script>
+
     <title>Frontend Mentor | GitHub user search app</title>
   </head>
   <body>
@@ -26,84 +32,93 @@
         <div class="header">
           <a class="logo" href="#">devfinder</a>
           <div class="theme">
-            <button class="theme-text">Dark</button>
+            <button class="theme-text"></button>
             <div class="theme-icon"></div>
           </div>
         </div>
 
-        <div class="search-bar">
+        <form class="search-bar" id="search-bar">
           <div class="search-icon"></div>
           <input
             class="search-input"
+            id="search-input"
             type="text"
             placeholder="Search GitHub username..."
           />
+          <p class="no-results" id="no-results" hidden>No results</p>
           <button class="search-btn">Search</button>
-        </div>
+        </form>
 
-        <div class="card">
+        <div class="card" id="card">
+          <div class="loader" id="loader" hidden></div>
           <div class="user-container">
             <img
               class="user-image"
-              src="assets/icon-search.svg"
+              id="user-image"
+              src=""
               alt="GitHub user image"
             />
             <div class="user">
-              <h1>The Octocat</h1>
-              <h2>@octocat</h2>
-              <p class="user-joined">Joined 25 Jan 2011</p>
+              <div class="user-names">
+                <h1 id="name"></h1>
+                <h2>
+                  <a target="_blank" class="username" id="username"></a>
+                </h2>
+              </div>
+              <p class="user-joined" id="user-joined"></p>
             </div>
           </div>
-          <p class="user-bio">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-            odio. Quisque volutpat mattis eros.
-          </p>
+          <p class="user-bio" id="user-bio"></p>
           <div class="user-stats">
             <div>
               <h3>Repos</h3>
-              <h4>8</h4>
+              <h4 id="repos"></h4>
             </div>
             <div>
               <h3>Followers</h3>
-              <h4>3938</h4>
+              <h4 id="followers"></h4>
             </div>
             <div>
               <h3>Following</h3>
-              <h4>9</h4>
+              <h4 id="following"></h4>
             </div>
           </div>
           <div class="user-info">
-            <div class="user-link">
-              <img
-                class="user-icon"
-                src="assets/icon-location.svg"
-                alt="Location icon"
-              />
-              <p>San Francisco</p>
+            <div class="user-link-container">
+              <div class="user-link">
+                <img
+                  class="user-icon"
+                  src="assets/icon-location.svg"
+                  alt="Location icon"
+                />
+                <p id="location"></p>
+              </div>
+              <div class="user-link">
+                <img
+                  class="user-icon"
+                  src="assets/icon-website.svg"
+                  alt="Website icon"
+                />
+                <a id="blog" target="_blank"></a>
+              </div>
             </div>
-            <div class="user-link">
-              <img
-                class="user-icon"
-                src="assets/icon-location.svg"
-                alt="Link icon"
-              />
-              <p>San Francisco</p>
-            </div>
-            <div class="user-link">
-              <img
-                class="user-icon"
-                src="assets/icon-twitter.svg"
-                alt="Twitter icon"
-              />
-              <p>San Francisco</p>
-            </div>
-            <div class="user-link">
-              <img
-                class="user-icon"
-                src="assets/icon-company.svg"
-                alt="Company icon"
-              />
-              <p>San Francisco</p>
+            <div class="user-link-container">
+              <div class="user-link">
+                <img
+                  class="user-icon"
+                  src="assets/icon-twitter.svg"
+                  alt="Twitter icon"
+                />
+                <a id="twitter" target="_blank"></a>
+              </div>
+              <div class="user-link">
+                <img
+                  class="user-icon"
+                  src="assets/icon-company.svg"
+                  alt="Company icon"
+                />
+                <p id="company"></p>
+              </div>
             </div>
           </div>
         </div>

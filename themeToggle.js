@@ -34,12 +34,13 @@ const applySetting = (passedSetting) => {
 };
 
 const setButtonLabelAndStatus = (currentSetting) => {
-  themeText.innerText = `${currentSetting === 'dark' ? 'Light' : 'Dark'}`;
-  themeIcon.style.content = `${
-    currentSetting === 'dark'
-      ? "url('assets/icon-sun.svg')"
-      : "url('assets/icon-moon.svg')"
-  }`;
+  if (currentSetting === 'dark') {
+    themeText.innerText = 'LIGHT';
+    themeIcon.style.content = "url('assets/icon-sun.svg')";
+  } else {
+    themeText.innerText = 'DARK';
+    themeIcon.style.content = "url('assets/icon-moon.svg')";
+  }
 };
 
 const toggleSetting = () => {
@@ -63,9 +64,8 @@ const toggleSetting = () => {
   return currentSetting;
 };
 
-theme.addEventListener('click', (e) => {
-  e.preventDefault();
-
+theme.addEventListener('click', (evt) => {
+  evt.preventDefault();
   applySetting(toggleSetting());
 });
 
