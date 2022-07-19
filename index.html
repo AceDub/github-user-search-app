@@ -45,7 +45,7 @@
             type="text"
             placeholder="Search GitHub username..."
           />
-          <p class="no-results" id="no-results" hidden>No results</p>
+          <p class="search-no-results" id="no-results" hidden>No results</p>
           <button class="search-btn">Search</button>
         </form>
 
@@ -55,32 +55,41 @@
             <img
               class="user-image"
               id="user-image"
-              src=""
               alt="GitHub user image"
+              src="https://avatars.githubusercontent.com/u/583231?v=4"
             />
             <div class="user">
               <div class="user-names">
-                <h1 id="name"></h1>
+                <h1 class="name" id="name">The Octocat</h1>
                 <h2>
-                  <a target="_blank" class="username" id="username"></a>
+                  <a
+                    target="_blank"
+                    class="username"
+                    id="username"
+                    href="https://github.com/octocat"
+                    >@octocat</a
+                  >
                 </h2>
               </div>
-              <p class="user-joined" id="user-joined"></p>
+              <p class="user-joined" id="user-joined">Joined: Jan 25, 2011</p>
             </div>
           </div>
-          <p class="user-bio" id="user-bio"></p>
+          <p class="user-bio" id="user-bio">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+            odio. Quisque volutpat mattis eros.
+          </p>
           <div class="user-stats">
             <div>
               <h3>Repos</h3>
-              <h4 id="repos"></h4>
+              <h4 class="repos" id="repos">8</h4>
             </div>
             <div>
               <h3>Followers</h3>
-              <h4 id="followers"></h4>
+              <h4 class="followers" id="followers">3938</h4>
             </div>
             <div>
               <h3>Following</h3>
-              <h4 id="following"></h4>
+              <h4 class="following" id="following">9</h4>
             </div>
           </div>
           <div class="user-info">
@@ -91,7 +100,7 @@
                   src="assets/icon-location.svg"
                   alt="Location icon"
                 />
-                <p id="location"></p>
+                <p id="location">San Francisco</p>
               </div>
               <div class="user-link">
                 <img
@@ -99,17 +108,19 @@
                   src="assets/icon-website.svg"
                   alt="Website icon"
                 />
-                <a id="blog" target="_blank"></a>
+                <a id="blog" target="_blank" href="https://github.blog"
+                  >https://github.blog</a
+                >
               </div>
             </div>
             <div class="user-link-container">
-              <div class="user-link">
+              <div class="user-link unavailable">
                 <img
                   class="user-icon"
                   src="assets/icon-twitter.svg"
                   alt="Twitter icon"
                 />
-                <a id="twitter" target="_blank"></a>
+                <a id="twitter" target="_blank" href="https://twitter.com"></a>
               </div>
               <div class="user-link">
                 <img
@@ -117,7 +128,7 @@
                   src="assets/icon-company.svg"
                   alt="Company icon"
                 />
-                <p id="company"></p>
+                <p id="company">@github</p>
               </div>
             </div>
           </div>

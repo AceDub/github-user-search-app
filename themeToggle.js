@@ -2,7 +2,6 @@
 document.documentElement.classList.remove('no-js');
 const STORAGE_KEY = 'user-color-scheme';
 const COLOR_MODE_KEY = '--color-mode';
-
 const theme = document.querySelector('.theme');
 const themeIcon = document.querySelector('.theme-icon');
 const themeText = document.querySelector('.theme-text');
@@ -13,7 +12,7 @@ const getCSSCustomProp = (propKey) => {
   );
 
   if (response.length) {
-    response = response.replace(/\"/g, '').trim();
+    response = response.replace(/\'|"/g, '').trim();
   }
 
   return response;
@@ -21,7 +20,6 @@ const getCSSCustomProp = (propKey) => {
 
 const applySetting = (passedSetting) => {
   let currentSetting = passedSetting || localStorage.getItem(STORAGE_KEY);
-
   if (currentSetting) {
     document.documentElement.setAttribute(
       'data-user-color-scheme',
@@ -64,8 +62,8 @@ const toggleSetting = () => {
   return currentSetting;
 };
 
-theme.addEventListener('click', (evt) => {
-  evt.preventDefault();
+theme.addEventListener('click', (event) => {
+  event.preventDefault();
   applySetting(toggleSetting());
 });
 

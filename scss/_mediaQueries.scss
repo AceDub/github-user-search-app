@@ -1,0 +1,119 @@
+// Mobile < 375px
+@media (max-width: 23.375em) {
+  .user-stats {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0.7rem;
+  }
+  .user-link a,
+  .user-link p {
+    width: 80%;
+  }
+}
+
+// Tablet
+@media (min-width: 48em) {
+  .name {
+    font-size: 1.625rem;
+  }
+  .username {
+    font-size: 1rem;
+  }
+  h3 {
+    font-size: 0.8125rem;
+  }
+  .repos,
+  .followers,
+  .following {
+    font-size: 1.375rem;
+  }
+  .user-joined,
+  .user-bio {
+    font-size: 0.9375rem;
+  }
+  .large {
+    font-size: 1.625rem;
+  }
+
+  .search-bar {
+    height: 4.3125rem;
+  }
+  .search-btn {
+    height: 3.125rem;
+    max-width: 6.625rem;
+    font-size: 1rem;
+    font-weight: 700;
+    font-style: normal;
+  }
+  .search-icon {
+    margin: 0 1.375rem 0 2rem;
+  }
+  .search-input {
+    padding: 0;
+    height: 40px;
+  }
+  .search-input::placeholder,
+  input[type='text'] {
+    font-size: 1.125rem;
+  }
+
+  .card {
+    padding: 2.5rem;
+    gap: 2rem;
+  }
+  .user-container {
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .user-image {
+    height: 7.3125rem;
+    width: 7.3125rem;
+  }
+  .user-info {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .user-link {
+    width: auto;
+  }
+  .user-link a,
+  .user-link p {
+    max-width: 11.875rem;
+    font-size: 0.9375rem;
+  }
+  .user-stats {
+    text-align: left;
+  }
+  .search-no-results {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 10px;
+  }
+}
+
+// Desktop
+@media (min-width: 90em) {
+  .container {
+    max-width: 45.625rem;
+    padding: 0;
+  }
+  .card {
+    padding: 3rem 3rem 3rem 12.625rem;
+    position: relative;
+  }
+  .user-image {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+  }
+  .user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .user-joined {
+    margin-top: 0.6rem;
+  }
+}

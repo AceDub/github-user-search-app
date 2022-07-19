@@ -28,26 +28,35 @@ const getUserData = (username) => {
       }
     })
     .then((data) => {
-      userImage.src = '';
-      updateUserData(data);
-      loader.hidden = true;
-      searchInput.value = '';
-      card.style.display = 'flex';
+      setTimeout(() => {
+        loader.hidden = true;
+        userImage.src = '';
+        updateUserData(data);
+        searchInput.value = '';
+        card.style.display = 'flex';
+      }, 200);
     })
     .catch((err) => {
       if (err.message === '404') {
-        noResults.hidden = false;
+        setTimeout(() => {
+          loader.hidden = true;
+          noResults.hidden = false;
+        }, 200);
+      }
+      if (err.message === '403') {
         loader.hidden = true;
+        noResults.innerHTML = 'API rate limit exceeded';
+        noResults.hidden = false;
       }
     });
 };
 
 function convertDate(date) {
   dayjs.extend(window.dayjs_plugin_customParseFormat);
-  return dayjs(date).format('MMM-DD-YYYY').replaceAll('-', ' ');
+  return dayjs(date).format('MMM DD, YYYY');
 }
 
-function getClickableLink(link) {
+function convertLink(link) {
   return link.startsWith('http://') || link.startsWith('https://')
     ? link
     : `http://${link}`;
@@ -59,7 +68,7 @@ function checkAvailability(element, value, link) {
     return 'Not Available';
   } else {
     element.parentElement.classList.remove('unavailable');
-    link ? (element.href = getClickableLink(link)) : '';
+    link ? (element.href = convertLink(link)) : '';
     return value;
   }
 }
@@ -68,25 +77,28 @@ function updateUserData(data) {
   if (!data.name) {
     fullName.hidden = true;
     username.classList.add('large');
+    username.innerText = data.login;
   } else {
+    username.innerText = `@${data.login}`;
     username.classList.remove('large');
     fullName.hidden = false;
     fullName.innerText = data.name;
   }
   if (!data.bio) {
     bio.innerText = 'This profile has no bio';
+    bio.style.opacity = 0.7;
   } else {
     bio.innerText = data.bio;
+    bio.style.opacity = 1;
   }
-  username.innerText = `@${data.login}`;
   username.href = `https://github.com/${data.login}`;
   userImage.src = data.avatar_url;
-  joinedDate.innerText = `Joined ${convertDate(data.created_at)}`;
+  joinedDate.innerText = `Joined: ${convertDate(data.created_at)}`;
   repos.innerText = data.public_repos;
   followers.innerText = data.followers;
   following.innerText = data.following;
   userLocation.innerText = checkAvailability(userLocation, data.location);
-  blog.innerText = checkAvailability(blog, data.blog, `${data.blog}`);
+  blog.innerText = checkAvailability(blog, data.blog, data.blog);
   twitter.innerText = checkAvailability(
     twitter,
     data.twitter_username,
