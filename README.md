@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub](https://github.com/AceDub/github-user-search-app)
-- Live Site URL: [https://acedub.github.io/github-user-search-app/](https://acedub.github.io/github-user-search-app/)
+- Solution URL: [GitHub](https://github.com/awongdev/github-user-search-app)
+- Live Site URL: [https://awongdev.github.io/github-user-search-app/](https://awongdev.github.io/github-user-search-app/)
 
 ## My process
 
@@ -54,4 +54,4 @@ Users should be able to:
 ## Author
 
 - Frontend Mentor - [@AceDub](https://www.frontendmentor.io/profile/AceDub)
-- GitHub - [@AceDub](https://github.com/AceDub)
+- GitHub - [@awongdev](https://github.com/awongdev)
